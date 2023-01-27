@@ -1,0 +1,200 @@
+@prefix adms:  <http://www.w3.org/ns/adms#> .
+@prefix dce:   <http://purl.org/dc/elements/1.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql/> .
+@prefix gipod: <https://gipod.vlaanderen.be/ns/gipod#> .
+@prefix locn:  <http://www.w3.org/ns/locn#> .
+@prefix m8g:   <http://data.europa.eu/m8g/> .
+@prefix mobi:  <https://data.vlaanderen.be/ns/mobiliteit#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix tree:  <https://w3id.org/tree#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+<https://private-api.gipod.test-vlaanderen.be/api/v1/ldes/mobility-hindrances/shape>
+        rdf:type              sh:NodeShape ;
+        sh:closed             true ;
+        sh:ignoredProperties  ( rdf:type ) ;
+        sh:property           [ sh:datatype  xsd:dateTime ;
+                                sh:maxCount  1 ;
+                                sh:minCount  1 ;
+                                sh:name      "generatedAtTime"@nl-be ;
+                                sh:path      prov:generatedAtTime
+                              ] ;
+        sh:property           [ sh:datatype  xsd:integer ;
+                                sh:maxCount  1 ;
+                                sh:minCount  1 ;
+                                sh:name      "gipodId"@nl-be ;
+                                sh:path      gipod:gipodId
+                              ] ;
+        sh:property           [ sh:name  "zone"@nl-be ;
+                                sh:node  [ sh:property  [ sh:maxCount  1 ;
+                                                          sh:name      "zoneType"@nl-be ;
+                                                          sh:node      [ sh:property  [ sh:languageIn  ( "en" "nl-be" ) ;
+                                                                                        sh:maxCount    1 ;
+                                                                                        sh:name        "prefLabel"@nl-be ;
+                                                                                        sh:path        skos:prefLabel
+                                                                                      ]
+                                                                       ] ;
+                                                          sh:path      mobi:Zone.type
+                                                        ] ;
+                                           sh:property  [ sh:maxCount  1 ;
+                                                          sh:name      "geometry"@nl-be ;
+                                                          sh:node      [ sh:property  [ sh:datatype  geo:wktLiteral ;
+                                                                                        sh:maxCount  1 ;
+                                                                                        sh:name      "wkt"@nl-be ;
+                                                                                        sh:path      geo:wkt
+                                                                                      ]
+                                                                       ] ;
+                                                          sh:path      locn:geometry
+                                                        ] ;
+                                           sh:property  [ sh:name  "consequence"@nl-be ;
+                                                          sh:node  [ sh:property  [ sh:languageIn  ( "en" "nl-be" ) ;
+                                                                                    sh:maxCount    1 ;
+                                                                                    sh:minCount    1 ;
+                                                                                    sh:name        "preferredName"@nl-be ;
+                                                                                    sh:path        skos:prefLabel
+                                                                                  ]
+                                                                   ] ;
+                                                          sh:path  mobi:gevolg
+                                                        ]
+                                         ] ;
+                                sh:path  mobi:zone
+                              ] ;
+        sh:property           [ sh:datatype  xsd:dateTime ;
+                                sh:maxCount  1 ;
+                                sh:minCount  1 ;
+                                sh:name      "lastModifiedOn"@nl-be ;
+                                sh:path      dct:modified
+                              ] ;
+        sh:property           [ sh:name  "createdBy"@nl-be ;
+                                sh:node  [ sh:property  [ sh:languageIn  ( "en" "nl-be" ) ;
+                                                          sh:maxCount    1 ;
+                                                          sh:minCount    1 ;
+                                                          sh:name        "preferredName"@nl-be ;
+                                                          sh:path        skos:prefLabel
+                                                        ] ;
+                                           sh:property  [ sh:maxCount  1 ;
+                                                          sh:minCount  1 ;
+                                                          sh:name      "isVersionOf"@nl-be ;
+                                                          sh:nodeKind  sh:IRI ;
+                                                          sh:path      dct:isVersionOf
+                                                        ]
+                                         ] ;
+                                sh:path  dce:creator
+                              ] ;
+        sh:property           [ sh:languageIn  ( "en" "nl-be" ) ;
+                                sh:maxCount    1 ;
+                                sh:name        "description"@nl-be ;
+                                sh:path        dct:description
+                              ] ;
+        sh:property           [ sh:datatype  xsd:dateTime ;
+                                sh:maxCount  1 ;
+                                sh:minCount  1 ;
+                                sh:name      "createdOn"@nl-be ;
+                                sh:path      dct:created
+                              ] ;
+        sh:property           [ sh:maxCount  1 ;
+                                sh:name      "status"@nl-be ;
+                                sh:node      [ sh:property  [ sh:languageIn  ( "en" "nl-be" ) ;
+                                                              sh:maxCount    1 ;
+                                                              sh:minCount    1 ;
+                                                              sh:name        "prefLabel"@nl-be ;
+                                                              sh:path        skos:prefLabel
+                                                            ]
+                                             ] ;
+                                sh:path      mobi:Inname.status
+                              ] ;
+        sh:property           [ sh:languageIn  ( "en" "nl-be" ) ;
+                                sh:maxCount    1 ;
+                                sh:minCount    1 ;
+                                sh:name        "eventName"@nl-be ;
+                                sh:path        adms:versionNotes
+                              ] ;
+        sh:property           [ sh:name  "hasConsequence"@nl-be ;
+                                sh:node  [ sh:property  [ sh:datatype  xsd:integer ;
+                                                          sh:maxCount  1 ;
+                                                          sh:minCount  1 ;
+                                                          sh:name      "gipodId"@nl-be ;
+                                                          sh:path      gipod:gipodId
+                                                        ]
+                                         ] ;
+                                sh:path  mobi:Inname.heeftGevolg
+                              ] ;
+        sh:property           [ sh:maxCount  1 ;
+                                sh:minCount  1 ;
+                                sh:name      "owner"@nl-be ;
+                                sh:node      [ sh:property     [ sh:languageIn  ( "en" "nl-be" ) ;
+                                                                 sh:maxCount    1 ;
+                                                                 sh:name        "preferredName"@nl-be ;
+                                                                 sh:path        skos:prefLabel
+                                                               ] ;
+                                               sh:property     [ sh:maxCount  1 ;
+                                                                 sh:minCount  1 ;
+                                                                 sh:name      "isVersionOf"@nl-be ;
+                                                                 sh:nodeKind  sh:IRI ;
+                                                                 sh:path      dct:isVersionOf
+                                                               ] ;
+                                               sh:targetClass  mobi:beheerder
+                                             ] ;
+                                sh:path      mobi:beheerder
+                              ] ;
+        sh:property           [ sh:maxCount  1 ;
+                                sh:minCount  1 ;
+                                sh:name      "lastModifiedBy"@nl-be ;
+                                sh:node      [ sh:property     [ sh:languageIn  ( "en" "nl-be" ) ;
+                                                                 sh:maxCount    1 ;
+                                                                 sh:minCount    1 ;
+                                                                 sh:name        "preferredName"@nl-be ;
+                                                                 sh:path        skos:prefLabel
+                                                               ] ;
+                                               sh:property     [ sh:maxCount  1 ;
+                                                                 sh:minCount  1 ;
+                                                                 sh:name      "isVersionOf"@nl-be ;
+                                                                 sh:nodeKind  sh:IRI ;
+                                                                 sh:path      dct:isVersionOf
+                                                               ] ;
+                                               sh:targetClass  <http://www.w3.org/ns/org#Organization>
+                                             ] ;
+                                sh:path      dce:contributor
+                              ] ;
+        sh:property           [ sh:name  "identifier"@nl-be ;
+                                sh:node  [ sh:property     [ sh:languageIn  ( "en" "nl-be" ) ;
+                                                             sh:maxCount    1 ;
+                                                             sh:name        "assignedByName"@nl-be ;
+                                                             sh:path        adms:schemaAgency
+                                                           ] ;
+                                           sh:property     [ sh:datatype  gipod:gipodId ;
+                                                             sh:name      "Identifier.identifier"@nl-be ;
+                                                             sh:path      skos:notation
+                                                           ] ;
+                                           sh:targetClass  adms:Identifier
+                                         ] ;
+                                sh:path  adms:identifier
+                              ] ;
+        sh:property           [ sh:maxCount  1 ;
+                                sh:minCount  1 ;
+                                sh:name      "isVersionOf"@nl-be ;
+                                sh:nodeKind  sh:IRI ;
+                                sh:path      dct:isVersionOf
+                              ] ;
+        sh:property           [ sh:name  "period"@nl-be ;
+                                sh:node  [ sh:property     [ sh:datatype  xsd:dateTime ;
+                                                             sh:maxCount  1 ;
+                                                             sh:minCount  1 ;
+                                                             sh:name      "end"@nl-be ;
+                                                             sh:path      m8g:endTime
+                                                           ] ;
+                                           sh:property     [ sh:datatype  xsd:dateTime ;
+                                                             sh:maxCount  1 ;
+                                                             sh:minCount  1 ;
+                                                             sh:name      "start"@nl-be ;
+                                                             sh:path      m8g:startTime
+                                                           ] ;
+                                           sh:targetClass  m8g:PeriodOfTime
+                                         ] ;
+                                sh:path  mobi:periode
+                              ] ;
+        sh:targetClass        mobi:MobilityHindrance .

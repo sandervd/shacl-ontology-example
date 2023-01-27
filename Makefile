@@ -1,3 +1,6 @@
+gipod: shacl
+	./shacl/bin/shaclvalidate.sh -datafile gipod-data.ttl -shapesfile gipod-shacl.ttl
+
 test: shacl
 	./shacl/bin/shaclvalidate.sh -datafile instance-data.ttl -shapesfile ontology.ttl
 

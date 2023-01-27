@@ -1,0 +1,54 @@
+@prefix adms:  <http://www.w3.org/ns/adms#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix gipod: <https://gipod.vlaanderen.be/ns/gipod#> .
+@prefix m8g:   <http://data.europa.eu/m8g/> .
+@prefix mobi:  <https://data.vlaanderen.be/ns/mobiliteit#> .
+@prefix sh:    <https://www.w3.org/ns/shacl#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix tree:  <https://w3id.org/tree#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+<https://private-api.gipod.vlaanderen.be/api/v1/ldes/mobility-hindrances>
+        tree:member  <https://private-api.gipod.vlaanderen.be/api/v1/mobility-hindrances/11513564/5358034> .
+
+<https://private-api.gipod.vlaanderen.be/api/v1/mobility-hindrances/11513564/5358034>
+        a                   mobi:MobilityHindrance ;
+        <http://purl.org/dc/elements/1.1/contributor>
+                [ a                <http://www.w3.org/ns/org#Organization> ;
+                  dct:isVersionOf  <https://private-api.gipod.vlaanderen.be/api/v1/organisations/12ccea24-ea8b-0e06-a39f-a3b5c73bc6f5> ;
+                  skos:prefLabel   "Gemeente Drogenbos"@nl-BE
+                ] ;
+        <http://purl.org/dc/elements/1.1/creator>
+                [ a                <http://www.w3.org/ns/org#Organization> ;
+                  dct:isVersionOf  <https://private-api.gipod.vlaanderen.be/api/v1/organisations/12ccea24-ea8b-0e06-a39f-a3b5c73bc6f5> ;
+                  skos:prefLabel   "Gemeente Drogenbos"@nl-BE
+                ] ;
+        dct:created         "2021-06-10T08:47:36.9622382Z"^^xsd:dateTime ;
+        dct:description     "1620 Drogenbos, Sterstraat 75: Andere"@nl-BE ;
+        dct:isVersionOf     <https://private-api.gipod.vlaanderen.be/api/v1/mobility-hindrances/11513564> ;
+        dct:modified        "2021-06-10T08:47:36.9622382Z"^^xsd:dateTime ;
+        adms:identifier     [ a                  adms:Identifier ;
+                              skos:notation      "11513564"^^gipod:gipodId ;
+                              adms:schemaAgency  "https://gipod.vlaanderen.be"@nl-BE
+                            ] ;
+        adms:versionNotes   "MobilityHindranceWasRegistered"@nl-BE ;
+        <http://www.w3.org/ns/prov#generatedAtTime>
+                "2021-06-10T08:47:36.963Z"^^xsd:dateTime ;
+        mobi:Inname.status  <https://private-api.gipod.vlaanderen.be/api/v1/taxonomies/statuses/5cc9ee5b-fa97-4d71-8851-51a9d0e2ebd0> ;
+        mobi:beheerder      [ a                <http://www.w3.org/ns/org#Organization> ;
+                              dct:isVersionOf  <https://private-api.gipod.vlaanderen.be/api/v1/organisations/12ccea24-ea8b-0e06-a39f-a3b5c73bc6f5> ;
+                              skos:prefLabel   "Gemeente Drogenbos"@nl-BE
+                            ] ;
+        mobi:periode        [ a              m8g:PeriodOfTime ;
+                              m8g:endTime    "2021-06-25T15:00:00Z"^^xsd:dateTime ;
+                              m8g:startTime  "2021-06-25T04:45:00Z"^^xsd:dateTime
+                            ] ;
+        gipod:gipodId       11513564 .
+
+<https://private-api.gipod.vlaanderen.be/api/v1/taxonomies/statuses/5cc9ee5b-fa97-4d71-8851-51a9d0e2ebd0>
+        skos:prefLabel  "Gevalideerd"@nl-BE .
+
+<https://private-api.gipod.vlaanderen.be/api/v1/works/11513562>
+        a                        mobi:Werk ;
+        mobi:Inname.heeftGevolg  <https://private-api.gipod.vlaanderen.be/api/v1/mobility-hindrances/11513564/5358034> , <https://private-api.gipod.vlaanderen.be/api/v1/mobility-hindrances/11513564/5358035> , <https://private-api.gipod.vlaanderen.be/api/v1/mobility-hindrances/11513564/5358036> ;
+        gipod:gipodId            11513562 .
