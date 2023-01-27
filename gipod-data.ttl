@@ -12,7 +12,7 @@
         tree:member  <https://private-api.gipod.vlaanderen.be/api/v1/mobility-hindrances/11513564/5358034> .
 
 <https://private-api.gipod.vlaanderen.be/api/v1/mobility-hindrances/11513564/5358034>
-        a                   mobi:MobilityHindrance ;
+        a                   mobi:Mobiliteitshinder ;
         <http://purl.org/dc/elements/1.1/contributor>
                 [ a                <http://www.w3.org/ns/org#Organization> ;
                   dct:isVersionOf  <https://private-api.gipod.vlaanderen.be/api/v1/organisations/12ccea24-ea8b-0e06-a39f-a3b5c73bc6f5> ;
