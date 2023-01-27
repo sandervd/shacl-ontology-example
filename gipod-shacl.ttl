@@ -197,4 +197,4 @@
                                          ] ;
                                 sh:path  mobi:periode
                               ] ;
-        sh:targetClass        mobi:MobilityHindrance .
+        sh:targetClass        mobi:Mobiliteitshinder .
